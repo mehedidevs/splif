@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -9,16 +11,18 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:name=".base.SplifApp"
         android:theme="@style/Theme.Spliff"
-        tools:targetApi="31">
+        tools:targetApi="33">
         <activity
-            android:name=".PaymentActivity"
+            android:name="com.arif.spliff.ui.DetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".BagActivity"
+            android:name="com.arif.spliff.ui.BagActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.DetailsActivity"
+            android:name="com.arif.spliff.ui.StartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,19 +31,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.LoginActivity"
+            android:name="com.arif.spliff.ui.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.RegisterActivity"
+            android:name="com.arif.spliff.ui.register.RegisterActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.arif.spliff.ui.SplashActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.StartActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.SplashActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.MainActivity"
+            android:name="com.arif.spliff.ui.MainActivity"
             android:exported="true" />
     </application>
 

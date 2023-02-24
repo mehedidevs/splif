@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
-import com.arif.spliff.R
 import com.arif.spliff.databinding.FragmentStartBinding
+import com.arif.spliff.ui.register.RegisterActivity
 
 class StartActivity : AppCompatActivity() {
     private lateinit var binding: FragmentStartBinding
