@@ -1,6 +1,6 @@
-package com.arif.spliff.model
+package com.arif.spliff.model.register
 
-data class RegisterUser(
+data class RequestRegisterUser(
     var name: String,
     var company: String?,
     var phone: String,

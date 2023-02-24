@@ -1,4 +1,4 @@
-package com.arif.spliff.model
+package com.arif.spliff.model.register
 
 
 import com.google.gson.annotations.SerializedName

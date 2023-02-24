@@ -19,7 +19,7 @@
             android:name="com.arif.spliff.ui.DetailsActivity"
             android:exported="false" />
         <activity
-            android:name="com.arif.spliff.ui.BagActivity"
+            android:name="com.arif.spliff.ui.CartFragment"
             android:exported="false" />
         <activity
             android:name="com.arif.spliff.ui.StartActivity"
@@ -31,7 +31,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.arif.spliff.ui.LoginActivity"
+            android:name="com.arif.spliff.ui.login.LoginActivity"
             android:exported="true" />
         <activity
             android:name="com.arif.spliff.ui.register.RegisterActivity"

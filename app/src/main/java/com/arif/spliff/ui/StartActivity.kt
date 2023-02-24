@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
 import com.arif.spliff.databinding.FragmentStartBinding
+import com.arif.spliff.ui.login.LoginActivity
 import com.arif.spliff.ui.register.RegisterActivity
 
 class StartActivity : AppCompatActivity() {

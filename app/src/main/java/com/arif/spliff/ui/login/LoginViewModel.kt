@@ -1,8 +1,10 @@
-package com.arif.spliff.ui.register
+package com.arif.spliff.ui.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.arif.spliff.model.login.RequestLogin
+import com.arif.spliff.model.login.ResponseLogin
 import com.arif.spliff.model.register.RequestRegisterUser
 import com.arif.spliff.model.register.ResponseRegisterUser
 import com.arif.spliff.repo.Repository
@@ -13,22 +15,22 @@ import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
-class RegisterViewModel @Inject constructor(var repository: Repository) : ViewModel() {
+class LoginViewModel @Inject constructor(var repository: Repository) : ViewModel() {
 
 
-    private var _responseData = MutableLiveData<ResponseRegisterUser>()
-    val responseData: LiveData<ResponseRegisterUser>
+    private var _responseData = MutableLiveData<ResponseLogin>()
+    val responseLoginData: LiveData<ResponseLogin>
         get() = _responseData
 
 
-    fun registerUserVM(user: RequestRegisterUser) {
+    fun loginUserVM(user: RequestLogin) {
 
-        val response = repository.registerUserRepo(user)
+        val response = repository.loginUserRepo(user)
 
-        response.enqueue(object : Callback<ResponseRegisterUser> {
+        response.enqueue(object : Callback<ResponseLogin> {
             override fun onResponse(
-                call: Call<ResponseRegisterUser>,
-                response: Response<ResponseRegisterUser>
+                call: Call<ResponseLogin>,
+                response: Response<ResponseLogin>
             ) {
 
                 if (response.isSuccessful) {
@@ -39,7 +41,7 @@ class RegisterViewModel @Inject constructor(var repository: Repository) : ViewMo
 
             }
 
-            override fun onFailure(call: Call<ResponseRegisterUser>, t: Throwable) {
+            override fun onFailure(call: Call<ResponseLogin>, t: Throwable) {
 
             }
         })
