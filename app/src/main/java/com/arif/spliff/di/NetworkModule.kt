@@ -1,8 +1,9 @@
 package com.arif.spliff.di
 
-import android.provider.SyncStateContract
-import com.arif.spliff.network.Api
+import com.arif.spliff.network.AuthApi
+import com.arif.spliff.network.ProductApi
 import com.arif.spliff.utils.AUTH_BASE_URL
+import com.arif.spliff.utils.PRODUCT_BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,16 +25,23 @@ class NetWorkModule {
     }
 
 
-
     @Provides
     @Singleton
     fun providesSecuredApi(
         retrofitBuilder: Retrofit.Builder
-    ): Api {
-        return retrofitBuilder.build().create(Api::class.java)
+    ): AuthApi {
+        return retrofitBuilder.build().create(AuthApi::class.java)
     }
 
-
+    @Provides
+    @Singleton
+    fun providesProductApi(
+    ): ProductApi {
+        val retrofit: Retrofit.Builder = Retrofit.Builder()
+            .baseUrl(PRODUCT_BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+        return retrofit.build().create(ProductApi::class.java)
+    }
 
 
 }

@@ -18,9 +18,7 @@
         <activity
             android:name="com.arif.spliff.ui.DetailsActivity"
             android:exported="false" />
-        <activity
-            android:name="com.arif.spliff.ui.CartFragment"
-            android:exported="false" />
+
         <activity
             android:name="com.arif.spliff.ui.StartActivity"
             android:exported="true">

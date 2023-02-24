@@ -37,6 +37,7 @@ android {
 
     buildFeatures {
         dataBinding true
+        viewBinding true
     }
 
     hilt {
@@ -46,7 +47,6 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
@@ -61,7 +61,6 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.1.0'
     implementation 'com.intuit.ssp:ssp-android:1.1.0'
 
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     //retrofit
     def retrofit_version = "2.9.0"
@@ -85,7 +84,18 @@ dependencies {
     // Coroutine Lifecycle Scopes
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
-
+    //utility
     implementation 'com.github.GrenderG:Toasty:1.5.2'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    //Room DB
+    def room_version = "2.5.0"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    kapt "android.arch.persistence.room:compiler:1.1.1"
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+
 
 }

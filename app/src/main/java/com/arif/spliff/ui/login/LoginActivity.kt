@@ -1,23 +1,19 @@
 package com.arif.spliff.ui.login
 
-import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.arif.spliff.R
 import com.arif.spliff.databinding.ActivityLoginBinding
 import com.arif.spliff.model.login.RequestLogin
-import com.arif.spliff.model.register.RequestRegisterUser
 import com.arif.spliff.ui.MainActivity
-import com.arif.spliff.ui.register.RegisterViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import es.dmoral.toasty.Toasty
+
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
 
