@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/clothing"
+        android:title="men's clothing"
+        />
+    <item
+        android:id="@+id/jewelery"
+        android:title="jewelery"
+        />
+    <item
+        android:id="@+id/electronics"
+        android:title="electronics"
+        />
+    <item
+        android:id="@+id/women_clothing"
+        android:title="women's clothing"
+        />
+
+
+    <item
+        android:title=""
+        />
+
+    <item
+        android:id="@+id/logout"
+        android:title="Log Out"
+        />
+
+
+</menu>
