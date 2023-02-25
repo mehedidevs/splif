@@ -99,5 +99,10 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.14.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
 
+    // ssl
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation files('libs/sslCommerzSdk.aar')
+    implementation 'com.android.support:multidex:1.0.3'
+
 
 }
