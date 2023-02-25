@@ -1,6 +1,7 @@
 package com.arif.spliff.ui.all_products
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.arif.spliff.databinding.ItemProductBinding
 import com.arif.spliff.entity.Product
+import com.arif.spliff.ui.DetailsActivity
 import com.bumptech.glide.Glide
 
 class ProductAdapter(var context: Context, var cartListener: ItemListener) :
@@ -41,8 +43,19 @@ class ProductAdapter(var context: Context, var cartListener: ItemListener) :
                     cartListener.addToCart(it)
                 }
 
-
             }
+           /* holder.itemView.run {
+                val intent = Intent(context,DetailsActivity::class.java)
+                intent.putExtra("id",it.id)
+                intent.putExtra("img",it.image)
+                intent.putExtra("name",it.category)
+                intent.putExtra("name",it.title)
+                intent.putExtra("des",it.description)
+                intent.putExtra("price",it.price)
+
+                context.startActivity(intent)
+            }*/
+
 
         }
     }

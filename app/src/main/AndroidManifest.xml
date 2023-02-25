@@ -22,12 +22,12 @@
         <activity
             android:name="com.arif.spliff.ui.StartActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+
+        <activity
+            android:name="com.arif.spliff.ui.PaymentActivity"
+            android:exported="true"/>
         <activity
             android:name="com.arif.spliff.ui.login.LoginActivity"
             android:exported="true" />
@@ -40,7 +40,13 @@
             android:exported="true" />
         <activity
             android:name="com.arif.spliff.ui.MainActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
