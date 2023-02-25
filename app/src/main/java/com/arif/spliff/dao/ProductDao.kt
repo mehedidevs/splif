@@ -21,5 +21,10 @@ interface ProductDao {
     @Query("SELECT * FROM product WHERE id=:id ")
     fun loadSingle(id: String): Product
 
+    @Query("SELECT * FROM product WHERE category LIKE :qry OR title LIKE :qry OR price LIKE :qry")
+    suspend fun loadQueryProducts(qry: String): List<Product>
+/*
+ title=:qry OR price=:qry OR description=:qry OR category=:qry
+ */
 
 }

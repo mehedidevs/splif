@@ -1,4 +1,4 @@
-package com.arif.spliff.ui.all_products
+package com.arif.spliff.ui.cart
 
 import android.content.Context
 import android.view.LayoutInflater

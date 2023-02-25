@@ -42,6 +42,7 @@ class Repository @Inject constructor(
 
     fun getProductRepo() = productDao.getAll()
     fun getProductSingleRepo(id: String) = productDao.loadSingle(id)
+    suspend fun getQueryProducts(qry: String) = productDao.loadQueryProducts(qry)
     fun getCartRepo() = cartDao.getAllCart()
     fun insertCartRepo(cart: Cart) = cartDao.insertCart(cart)
 

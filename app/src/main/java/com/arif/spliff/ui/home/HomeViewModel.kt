@@ -1,4 +1,4 @@
-package com.arif.spliff.ui.all_products
+package com.arif.spliff.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -12,12 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ProductViewModel @Inject constructor(var repository: Repository) : ViewModel() {
-
-
-    fun responseAllProduct() = repository.getProductRepo()
-    fun responseAllCart() = repository.getCartRepo()
-    fun insertCart(cart: Cart) = repository.insertCartRepo(cart)
+class HomeViewModel @Inject constructor(var repository: Repository) : ViewModel() {
 
     private var _queryData = MutableLiveData<List<Product>>()
     val queryData: LiveData<List<Product>>

@@ -7,10 +7,12 @@
 
     </data>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".ui.all_products.AllProductsFragment">
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/productRcv"
@@ -20,5 +22,5 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_product" />
 
-    </FrameLayout>
+    </LinearLayout>
 </layout>

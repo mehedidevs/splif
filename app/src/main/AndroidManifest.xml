@@ -20,7 +20,7 @@
             android:exported="false" />
 
         <activity
-            android:name="com.arif.spliff.ui.StartActivity"
+            android:name="com.arif.spliff.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,7 +39,7 @@
             android:name="com.arif.spliff.ui.SplashActivity"
             android:exported="true" />
         <activity
-            android:name="com.arif.spliff.ui.MainActivity"
+            android:name="com.arif.spliff.ui.StartActivity"
             android:exported="true" />
     </application>
 

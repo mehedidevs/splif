@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.arif.spliff.databinding.FragmentCartBinding
 import com.arif.spliff.entity.CartTemp
-import com.arif.spliff.ui.all_products.CartAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
