@@ -1,5 +1,6 @@
 package com.arif.spliff.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -12,8 +13,11 @@ import android.widget.TextView.OnEditorActionListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.arif.spliff.R
 import com.arif.spliff.databinding.FragmentHomeBinding
 import com.arif.spliff.entity.Product
+import com.arif.spliff.ui.all_products.AllProductsFragment
 import com.arif.spliff.ui.all_products.ItemListener
 import com.arif.spliff.ui.all_products.ProductAdapter
 import com.arif.spliff.ui.all_products.ShowCartFragment
@@ -90,6 +94,15 @@ class HomeFragment : Fragment(), ItemListener {
 
         }
 
+        binding.vapes.setOnClickListener {
+          findNavController().navigate(R.id.action_homeFragment_to_allProductsFragment)
+        }
+        binding.flower.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_allProductsFragment)
+        }
+        binding.edibles.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_allProductsFragment)
+        }
 
 
         return binding.root

@@ -12,26 +12,7 @@
         android:layout_height="match_parent"
         tools:context=".ui.all_products.AllProductsFragment">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/searchCard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_16sdp"
 
-            app:cardCornerRadius="@dimen/_4sdp"
-            app:cardElevation="@dimen/_5sdp"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/search"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_back2"
-                android:drawableRight="@drawable/search"
-                android:hint="Search here"
-                android:padding="15dp" />
-
-        </androidx.cardview.widget.CardView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/productRcv"
@@ -40,7 +21,7 @@
             android:text="@string/hello_blank_fragment"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_product"
-            app:layout_constraintTop_toBottomOf="@id/searchCard"/>
+           app:layout_constraintTop_toTopOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -47,17 +47,6 @@ class ProductAdapter(
                 }
 
             }
-           /* holder.itemView.run {
-                val intent = Intent(context,DetailsActivity::class.java)
-                intent.putExtra("id",it.id)
-                intent.putExtra("img",it.image)
-                intent.putExtra("name",it.category)
-                intent.putExtra("name",it.title)
-                intent.putExtra("des",it.description)
-                intent.putExtra("price",it.price)
-
-                context.startActivity(intent)
-            }*/
 
 
 

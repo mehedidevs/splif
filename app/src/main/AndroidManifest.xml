@@ -36,10 +36,10 @@
             android:exported="true" />
 
         <activity
-            android:name="com.arif.spliff.ui.SplashActivity"
+            android:name="com.arif.spliff.ui.MainActivity"
             android:exported="true" />
         <activity
-            android:name="com.arif.spliff.ui.MainActivity"
+            android:name="com.arif.spliff.ui.SplashActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

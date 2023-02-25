@@ -12,44 +12,6 @@
         android:layout_height="match_parent"
         tools:context=".ui.DetailsActivity">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/time_style"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/battary"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/battery"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/signal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/wifi"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="5dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/battary" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/mobile_signal"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="5dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/signal" />
 
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -59,7 +21,7 @@
             android:src="@drawable/ic_back"
             android:layout_marginTop="25dp"
             android:layout_marginStart="20dp"
-            app:layout_constraintTop_toBottomOf="@id/time"
+     app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -69,7 +31,7 @@
             android:src="@drawable/ic_share"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="20dp"
-            app:layout_constraintTop_toBottomOf="@id/time"
+app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -79,7 +41,7 @@
             android:src="@drawable/heart"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="20dp"
-            app:layout_constraintTop_toBottomOf="@id/time"
+        app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@id/share" />
 
 
@@ -103,17 +65,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/img" />
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/img_more"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/details_back"
-            app:layout_constraintBottom_toBottomOf="parent">
+
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/details_back"
+                app:layout_constraintBottom_toBottomOf="parent"
 
                 >
 
@@ -139,6 +98,7 @@
                     android:textColor="@color/primary_color"
                     android:textSize="@dimen/_20sdp"
                     android:layout_marginStart="@dimen/_24sdp"
+                    android:layout_marginEnd="@dimen/_24sdp"
                     android:layout_marginTop="@dimen/_5sdp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/txt" />
@@ -153,21 +113,33 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/name" />
 
-                <TextView
-                    android:id="@+id/discription"
-                    android:layout_width="0dp"
+                <ScrollView
+                    android:id="@+id/scrool"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday"
-                    android:fontFamily="@font/gilroy_regular"
-                    android:textColor="@color/gray_color"
-                    android:textSize="@dimen/_14sdp"
-                    android:maxHeight="100dp"
-                    android:layout_marginStart="@dimen/_24sdp"
-                    android:layout_marginEnd="@dimen/_24sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/details_back"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/thc" />
+                    app:layout_constraintBottom_toTopOf="@id/add_img"
+                    app:layout_constraintTop_toBottomOf="@id/thc">
+
+                    <TextView
+                        android:id="@+id/discription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday"
+                        android:fontFamily="@font/gilroy_regular"
+                        android:textColor="@color/gray_color"
+                        android:textSize="@dimen/_14sdp"
+                        android:layout_marginStart="@dimen/_24sdp"
+                        android:layout_marginEnd="@dimen/_24sdp"
+
+                        />
+
+                </ScrollView>
+
+
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/add_img"
@@ -177,7 +149,7 @@
                     android:src="@drawable/add"
                     android:layout_marginTop="@dimen/_10sdp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/discription" />
+                    app:layout_constraintTop_toBottomOf="@id/scrool" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/quantity_txt"
@@ -209,7 +181,7 @@
                     android:layout_height="wrap_content"
                     android:text="$20"
                     android:fontFamily="@font/gilroy_bold"
-                    android:textSize="@dimen/_27sdp"
+                    android:textSize="@dimen/_20sdp"
                     android:textColor="@color/primary_color"
                     android:layout_marginEnd="25dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -236,7 +208,7 @@
                     android:layout_height="wrap_content"
                     android:text="$20"
                     android:fontFamily="@font/gilroy_bold"
-                    android:textSize="@dimen/_27sdp"
+                    android:textSize="@dimen/_20sdp"
                     android:layout_marginStart="5dp"
                     android:textColor="@color/primary_color"
                     app:layout_constraintStart_toEndOf="@id/txt2"
@@ -253,7 +225,7 @@
                     android:textAllCaps="false"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:textSize="@dimen/_17sdp"
+                    android:textSize="@dimen/_14sdp"
                     android:textColor="@color/white"
                     android:fontFamily="@font/gilroy_bold"
                     android:background="@drawable/btn_back3"
@@ -265,7 +237,7 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </ScrollView>
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

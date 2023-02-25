@@ -12,14 +12,14 @@ import com.sslwireless.sslcommerzlibrary.model.util.SSLCSdkType
 import com.sslwireless.sslcommerzlibrary.view.singleton.IntegrateSSLCommerz
 import com.sslwireless.sslcommerzlibrary.viewmodel.listener.SSLCTransactionResponseListener
 
-class PaymentActivity : AppCompatActivity(), SSLCTransactionResponseListener{
+class PaymentActivity : AppCompatActivity(), SSLCTransactionResponseListener {
     lateinit var binding: ActivityPaymentBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPaymentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val price = intent.getIntExtra("price",0)
+        val price = intent.getDoubleExtra("price", 0.0)
 
         val sslCommerzInitialization = SSLCommerzInitialization(
             "creat613377970f2ed",
@@ -38,14 +38,14 @@ class PaymentActivity : AppCompatActivity(), SSLCTransactionResponseListener{
             .buildApiCall(this)
 
         binding.continueImg.setOnClickListener {
-            startActivity(Intent(this,MainActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
 
     }
 
     override fun transactionSuccess(p0: SSLCTransactionInfoModel?) {
-          binding.layout.visibility = View.VISIBLE
+        binding.layout.visibility = View.VISIBLE
     }
 
     override fun transactionFail(p0: String?) {

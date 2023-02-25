@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.arif.spliff.databinding.FragmentCartBinding
 import com.arif.spliff.entity.CartTemp
 import com.arif.spliff.ui.PaymentActivity
-import com.arif.spliff.ui.all_products.CartAdapter
+
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,12 +24,13 @@ class CartFragment : Fragment() {
 
     lateinit var adapter: CartAdapter
 
+    var amountToPay = 0.0;
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = FragmentCartBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[CartViewModel::class.java]
 
@@ -47,7 +48,9 @@ class CartFragment : Fragment() {
             list.forEach {
                 val product = viewModel.responseProductSingle("${it.productID}")
 
-                val totalPRice = it.noOfProduct * product.price
+                val totalPrice = it.noOfProduct * product.price
+
+                amountToPay += totalPrice
 
 
                 val cart = CartTemp(
@@ -58,7 +61,7 @@ class CartFragment : Fragment() {
                     product.category,
                     product.image,
                     it.noOfProduct.toDouble(),
-                    totalPRice
+                    totalPrice
 
                 )
                 carts.add(cart)
@@ -68,11 +71,13 @@ class CartFragment : Fragment() {
 
             adapter.submitList(carts.toList())
 
+            binding.totalPrice.text = "$${amountToPay}"
+
         }
 
         binding.payBtn.setOnClickListener {
-            val intent = Intent(context,PaymentActivity::class.java)
-            intent.putExtra("price",100)
+            val intent = Intent(context, PaymentActivity::class.java)
+            intent.putExtra("price", amountToPay)
             startActivity(intent)
         }
 

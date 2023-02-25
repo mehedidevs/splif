@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.arif.spliff.R
 import com.arif.spliff.databinding.ActivityDetailsBinding
+import com.arif.spliff.entity.Product
 import com.bumptech.glide.Glide
 
 class DetailsActivity : AppCompatActivity() {
@@ -13,20 +14,24 @@ class DetailsActivity : AppCompatActivity() {
         binding = ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val intent = intent
-        val id = intent.getIntExtra("id",0)
-        val title = intent.getStringExtra("title")
-        val img = intent.getStringExtra("img")
-        val des = intent.getStringExtra("des")
-        val price = intent.getStringExtra("price")
+        if (intent.hasExtra("prd")){
+            var product: Product? = intent.getParcelableExtra("prd")
 
-        if (id != null){
+            product?.run {
 
-            binding.name.text = title
-            binding.discription.text = des
-            binding.priceTxt.text = price
-            Glide.with(this).load(img).into(binding.img)
+                binding.name.text = title
+                binding.priceTxt.text = "$ "+price.toString()
+                binding.totalPrice.text = "$ "+price.toString()
+                binding.discription.text = description
+                Glide.with(this@DetailsActivity).load(product.image).into(binding.img)
+
+            }
+
+
+
         }
+
+
 
         binding.back.setOnClickListener {
             finish()
