@@ -1,5 +1,6 @@
 package com.arif.spliff.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -36,6 +37,10 @@ class PaymentActivity : AppCompatActivity(), SSLCTransactionResponseListener{
             .addSSLCommerzInitialization(sslCommerzInitialization)
             .buildApiCall(this)
 
+        binding.continueImg.setOnClickListener {
+            startActivity(Intent(this,MainActivity::class.java))
+            finish()
+        }
 
     }
 
