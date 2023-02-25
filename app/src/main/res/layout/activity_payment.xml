@@ -8,10 +8,13 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/primary_color"
-        tools:context=".ui.PaymentActivity">
+        tools:context=".ui.PaymentActivity"
+        android:visibility="gone"
+        >
 
 
         <androidx.appcompat.widget.AppCompatImageView

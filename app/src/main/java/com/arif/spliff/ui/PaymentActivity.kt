@@ -1,8 +1,8 @@
 package com.arif.spliff.ui
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil.setContentView
 import com.arif.spliff.databinding.ActivityPaymentBinding
 import com.sslwireless.sslcommerzlibrary.model.initializer.SSLCommerzInitialization
 import com.sslwireless.sslcommerzlibrary.model.response.SSLCTransactionInfoModel
@@ -40,7 +40,7 @@ class PaymentActivity : AppCompatActivity(), SSLCTransactionResponseListener{
     }
 
     override fun transactionSuccess(p0: SSLCTransactionInfoModel?) {
-        TODO("Not yet implemented")
+          binding.layout.visibility = View.VISIBLE
     }
 
     override fun transactionFail(p0: String?) {
